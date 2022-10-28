@@ -34,8 +34,13 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<User> get(@PathVariable String id) {
-        return ResponseEntity
-                .ok()
-                .body(userDao.get(id));
+        try {
+            User user = this.userDao.get(id);
+            return ResponseEntity
+                    .ok()
+                    .body(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
