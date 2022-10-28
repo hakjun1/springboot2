@@ -12,13 +12,15 @@ import java.sql.SQLException;
 @Component
 public class UserDao {
 
-    private final DataSource dataSource;
+
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDao(DataSource dataSource, JdbcTemplate jdbcTemplate) {
-        this.dataSource = dataSource;
+    public UserDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
+
+
     private RowMapper<User> rowMapper = new RowMapper<User>() {
         @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -27,10 +29,11 @@ public class UserDao {
         }
     };
 
-    public void add(User user) {
-        this.jdbcTemplate.update("INSERT INTO users(id,name,password) values(?,?,?)",
+    public int add(User user) {
+       return this.jdbcTemplate.update("INSERT INTO users(id,name,password) values(?,?,?)",
                 user.getId(), user.getName(), user.getPassword());
     }
+
     public int deleteAll() {
         return this.jdbcTemplate.update("delete from users");
     }
