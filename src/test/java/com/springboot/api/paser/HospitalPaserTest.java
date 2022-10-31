@@ -25,7 +25,7 @@ class HospitalPaserTest {
         assertEquals(3620000,hospital.getOpenLocalGovernmentCode());
         assertEquals("PHMA119993620020041100004",hospital.getManagementNumber());
         assertEquals(LocalDateTime.of(1999, 6, 12, 0, 0, 0), hospital.getLicenseDate()); //19990612
-        assertEquals(6, hospital.getBusinessStatus());
+        assertEquals(1, hospital.getBusinessStatus());
         assertEquals(13, hospital.getBusinessStatusCode());
         assertEquals("062-515-2875", hospital.getPhone());
         assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hospital.getFullAddress());
