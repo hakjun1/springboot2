@@ -29,9 +29,10 @@ class HospitalPaserTest {
     void add() {
         HospitalPaser hp = new HospitalPaser();
         Hospital hospital = hp.parse(line1);
+        assertEquals(0,hospitalDao.getCount());
         hospitalDao.add(hospital);
+        assertEquals(1,hospitalDao.getCount());
     }
-
 
 
     @Test
