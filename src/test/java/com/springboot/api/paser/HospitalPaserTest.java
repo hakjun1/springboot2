@@ -27,6 +27,7 @@ class HospitalPaserTest {
     @Test
     @DisplayName("Hospital insert")
     void add() {
+        hospitalDao.deleteAll();
         HospitalPaser hp = new HospitalPaser();
         Hospital hospital = hp.parse(line1);
         assertEquals(0,hospitalDao.getCount());
