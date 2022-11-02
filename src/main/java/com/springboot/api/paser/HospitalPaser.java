@@ -1,7 +1,6 @@
 package com.springboot.api.paser;
 
 import com.springboot.api.domain.Hospital;
-
 import java.time.LocalDateTime;
 import java.util.Arrays;
 

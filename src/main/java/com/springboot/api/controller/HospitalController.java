@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class HospitalController {
     private final HospitalDao hospitalDao;
 
-    @Autowired
+
     public HospitalController(HospitalDao hospitalDao) {
         this.hospitalDao = hospitalDao;
     }
