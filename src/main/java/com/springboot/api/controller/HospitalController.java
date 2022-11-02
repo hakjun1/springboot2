@@ -18,6 +18,17 @@ public class HospitalController {
     public HospitalController(HospitalDao hospitalDao) {
         this.hospitalDao = hospitalDao;
     }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Hospital> get(@PathVariable Integer id) {
+//        Hospital hospital = hospitalDao.findbyId(id);
+//        Optional<Hospital> opt = Optional.of(hospital);
+//
+//        if (!opt.isEmpty()) {
+//            return ResponseEntity.ok().body(hospital);
+//        } else {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Hospital());
+//
+//        }
 
     @GetMapping("/{id}")
     public ResponseEntity<Hospital> get(@PathVariable Integer id) {
